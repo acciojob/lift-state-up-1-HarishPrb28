@@ -5,7 +5,7 @@ const ChildComponents = (props) => {
   const { showModal, setShowModal } = props;
   return (
     <div className="child">
-      <h2>Child Components</h2>
+      <h2>Child Component</h2>
       <button
         onClick={() => {
           setShowModal(!showModal);
