@@ -1,19 +1,27 @@
-import React from "react";
-import ModalComponents from "./ModalComponents";
+import React, { useState } from "react";
 
-const ChildComponents = (props) => {
-  const { showModal, setShowModal } = props;
+const ChildComponents = () => {
+  let [modal, setModal] = useState("");
+
   return (
     <div className="child">
-      <h2>Child Component</h2>
+      <h1>Child Component</h1>
       <button
         onClick={() => {
-          setShowModal(!showModal);
+          setModal(!modal);
         }}
       >
         Show Modal
       </button>
-      {showModal && <ModalComponents />}
+      {
+        // modal component goes here.
+        modal && (
+          <div>
+            <h3>Modal Content</h3>
+            <p>This is modal content</p>
+          </div>
+        )
+      }
     </div>
   );
 };
